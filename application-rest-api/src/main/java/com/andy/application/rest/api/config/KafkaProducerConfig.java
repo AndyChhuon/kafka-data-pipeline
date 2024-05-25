@@ -1,5 +1,7 @@
 package com.andy.application.rest.api.config;
 
+import com.andy.application.rest.api.serializer.InsurancePolicyEventSerializer;
+import com.andy.entities.event.InsurancePolicyEvent;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,16 +24,16 @@ public class KafkaProducerConfig {
         props.put(
             ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put( ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class); // because we are dealing with strings
-        props.put( ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        props.put( ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, InsurancePolicyEventSerializer.class);
         return props;
     }
 
     @Bean
-    public ProducerFactory<String, String> producerFactory() {
+    public ProducerFactory<String, InsurancePolicyEvent> producerFactory() {
         return new DefaultKafkaProducerFactory<>(kafkaProducerConfig()); // Allows us to create kafka producers, which send messages to a topic
     }
     @Bean
-    public KafkaTemplate<String, String> kafkaTemplate(ProducerFactory<String, String> producerFactory) {
+    public KafkaTemplate<String, InsurancePolicyEvent> kafkaTemplate(ProducerFactory<String, InsurancePolicyEvent> producerFactory) {
         return new KafkaTemplate<>(producerFactory); // Provides convenience methods for sending messages to kafka topics
     }
 

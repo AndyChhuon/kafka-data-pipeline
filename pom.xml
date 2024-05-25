@@ -16,9 +16,9 @@
 	<description>Demo project for Spring Boot</description>
 	<modules>
 		<module>data-pipeline-processor</module>
-		<module>data-pipeline-processor</module>
 		<module>application-rest-api</module>
-	</modules>
+        <module>data-pipeline-entities</module>
+    </modules>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -55,15 +55,21 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>1.5.5.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-processor</artifactId>
+			<version>1.5.5.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+		</dependency>
     </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>
