@@ -1,4 +1,4 @@
-package com.andy.entities.datapipeline;
+package com.andy.entities.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

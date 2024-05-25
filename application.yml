@@ -1,0 +1,11 @@
+spring:
+    kafka:
+        bootstrap-servers: localhost:9092
+        topic:
+            name: insurance-policies-Topic
+
+    data:
+        mongodb:
+            host: localhost
+            port: 27017
+            database: kafka-data-pipeline

@@ -17,7 +17,7 @@ public interface InsurancePolicyEventMapper {
             PolicyDataInputDTO policyDataInputDTO
     );
 
-    default UUID generateUUID() {
-        return UUID.randomUUID();
+    default String generateUUID() {
+        return UUID.randomUUID().toString();
     }
 }

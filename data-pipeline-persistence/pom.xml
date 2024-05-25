@@ -9,8 +9,8 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.andy.application.api</groupId>
-    <artifactId>application-rest-api</artifactId>
+    <groupId>com.andy.persistence</groupId>
+    <artifactId>data-pipeline-persistence</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -24,20 +24,6 @@
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>com.andy.persistence</groupId>
-            <artifactId>data-pipeline-persistence</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
