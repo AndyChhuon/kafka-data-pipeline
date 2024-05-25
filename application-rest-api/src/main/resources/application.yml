@@ -1,0 +1,8 @@
+spring:
+    kafka:
+        bootstrap-servers: localhost:9092
+        topic:
+            name: insurance-policies-Topic
+
+server:
+    port: 8080
