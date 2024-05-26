@@ -1,2 +1,21 @@
 server:
     port: 8080
+
+spring:
+    mail:
+      host: localhost
+      port: 8025
+      username: hello
+      password: hello
+
+      properties:
+        mail:
+          smtp:
+            ssl:
+              trust: "*"
+            auth: false
+            starttls:
+              enable: false
+            connectiontimeout: 5000
+            timeout: 3000
+            writetimeout: 5000
