@@ -41,6 +41,6 @@ public class InsurancePolicyService {
             emailService.send("broker123@gmail.com", fileUuid);
             insurancePolicyEntityRepository.saveAll(readyToSendTransactions);
 
-            System.out.println("Sent files" + fileUuid);
+            System.out.println("Sent files " + fileUuid);
     }
 }
