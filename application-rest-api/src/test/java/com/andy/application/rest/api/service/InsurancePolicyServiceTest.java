@@ -63,7 +63,7 @@ class InsurancePolicyServiceTest {
         PolicyDataInputDTO policyDataInputDTO = easyRandom.nextObject(PolicyDataInputDTO.class);
 
         //when
-        insurancePolicyService.publish(policyDataInputDTO);
+        InsurancePolicyEvent returnedInsurancePolicyEvent = insurancePolicyService.publish(policyDataInputDTO);
 
         //then
         verify(kafkaTemplate).send(stringArgumentCaptor.capture(), insurancePolicyEventArgumentCaptor.capture());
@@ -73,6 +73,7 @@ class InsurancePolicyServiceTest {
         verify(insurancePolicyEntityRepository).save(insurancePolicyEntityMongoDbArgumentCaptor.capture());
         assertThat(insurancePolicyEventArgumentCaptor.getValue()).usingRecursiveComparison().isEqualTo(insurancePolicyEntityMongoDbArgumentCaptor.getValue());
 
+        assertThat(insurancePolicyEventArgumentCaptor.getValue()).usingRecursiveComparison().isEqualTo(returnedInsurancePolicyEvent);
     }
 
     @Test
